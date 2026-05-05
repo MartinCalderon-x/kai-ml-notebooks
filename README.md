@@ -29,7 +29,7 @@ En la primera corrida del notebook usamos:
 | **Modelo base** | Qwen3.5-4B (Alibaba, Feb 2026) |
 | **Técnica** | LoRA — r=16, alpha=16 |
 | **Dataset** | [LAION OIG chip2](https://huggingface.co/datasets/laion/OIG) — 500 ejemplos de instrucción en inglés |
-| **Pasos** | 100 steps (~5 min en T4) |
+| **Pasos** | 100 steps (~15 min en T4) |
 | **Hardware** | Google Colab T4 gratuito (15GB VRAM) |
 | **Export** | GGUF q4_k_m (~2.5GB) |
 
@@ -82,10 +82,11 @@ Paso 1: Instalar Unsloth (git nightly)
 Paso 2: Importar Unsloth primero
 Paso 3: Cargar Qwen3.5-4B o Gemma 4
 Paso 4: Elegir dataset
-Paso 5: Entrenar (~5 min, 100 steps)
+Paso 5: Entrenar (~15 min, 100 steps)
 Paso 6: Testear inferencia
 Paso 7: Descargar LoRA + instalar          Recibís el .gguf en Descargas
-        llama.cpp + exportar GGUF    →
+        llama.cpp (~3 min) +         →     (~2.5GB, q4_k_m)
+        exportar GGUF (~30-45 min)
                                            ollama create mi-modelo -f Modelfile
                                            ollama run mi-modelo
 ```
